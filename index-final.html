@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>City Photo Gallery</title>
+        <link rel="icon" href="pngwing.png">
+        <meta name="author" content="Jason, David, Imran">
+        <meta name="Purpose" content="Final Website project">
+        <link rel="style" href="">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            p{
+                float: left;
+            }
+            .headerBlock{
+                font-style:normal;
+                font-family:'Times New Roman', Times, serif;
+                width: 100;
+                padding: 1px;
+                text-align: center;
+                background: rgb(200, 251, 253);
+    
+            }
+            body{
+                
+                background-image:url("https://scoutlife.org/wp-content/uploads/2019/04/skyblue.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+            img{
+                width: 100%;
+                height: 90%;
+            }
+            .city-div{
+                width: 100%;
+                float: right;
+            }
+            .city-div:hover{
+                background-color: rgba(0, 0, 0, 0.056);
+            }
+            .city-header{
+                font-family:'Times New Roman', Times, serif;
+                font-size: 26px;
+                text-align: left;
+                color: rgba(0, 0, 0, 0.935);
+                background-color: rgb(4, 182, 209);
+                padding-left: 600px;
+                padding-top: 1px;
+                padding-bottom: 1px ;
+            }
+            .city-txt{
+                font-size: x-large;
+                 float:left; 
+                 max-width: 50%;
+                 padding: 15px;
+                 word-wrap: break-word;
+                 font-family:Arial, Helvetica, sans-serif;
+                 font-weight:500;
+                 text-align: center;
+                 line-height: normal;
+                 vertical-align: middle;
+
+
+            }
+            .img-div{
+                position: relative;
+                display:none;
+                max-width: 50%;
+                float: right;
+                user-select: none;
+            }
+            .bar{
+                font-weight: normal;
+                font-family:Arial, Helvetica, sans-serif;
+                width: 100%;
+                background-color: rgb(200, 251, 253);
+                padding-bottom: 10px;
+                padding-top: 10px;
+                position: sticky;
+                top: 0;
+                z-index: 1;
+                text-align: center;
+            }
+            .bar:hover{
+                background-color: rgba(200, 251, 253, 0.924);
+            }
+            .refer{
+                position: relative;
+                padding-right: 10px;
+            }
+            .numtxt{
+                color: rgba(255, 255, 255, 0.887);
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 20px;
+                position:absolute;
+            }
+            .prev, .next{
+                cursor:pointer;
+                position: absolute;
+                width: auto;
+                color: white;
+                font-weight: bold;
+                font-size: 25px;
+                border-radius: 3px 3px 3px 3px;
+                user-select: none;
+                padding: 16px;
+                top:45%;
+            }
+            .prev:hover, 
+            .next:hover{
+                background-color: rgba(0,0,0, 0.8);
+            }
+            .prev{
+                left:0;
+            }
+            .next{
+                right:0;
+            }
+            .closebtn {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                color: white;
+                font-size: 35px;
+                cursor: pointer;
+            }
+            .full-img {
+                margin-right:25%;
+                margin-left:25%;
+                width:50%;
+                position: fixed;
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+            <div class="headerBlock">
+                <h1>CITIES GALLERY</h1>
+                <h3>Welcomes You to Cities Around the World</h3>
+            </div>
+            <div class="bar" onclick="showInnersRefer();">
+                Visit:
+                <a class="refer" href=#TokyoDiv>Tokyo</a>
+                <a class="refer" href=#QuebecDiv>Quebec</a>
+                <a class="refer" href=#LucerneDiv>Lucerne</a>               
+                <a class="refer" href=#TallinnDiv>Tallinn</a>
+                <a class="refer" href=#queenstownDiv>Queenstown</a>
+                <a class="refer" href=#cartagenaDiv>Cartagena</a>
+                <a class="refer" href=#krakowDiv>Krakow</a>
+                <a class="refer" href=#brugesDiv>Bruges</a>
+                <a class="refer" href=#tianjinDiv>Tianjin</a>
+                <a class="refer" href=#habanaDiv>Habana</a>
+                <a class="refer" href=#vancouverDiv>Vancouver</a>               
+
+            </div>
+
+            <!--Tokyo City-->
+            <div id="TokyoDiv" class="city-div">
+                <div class="city-header">
+                    <h3>Tokyo</h3>
+                </div>
+                <div class ="city-txt">
+                    Tokyo, historically called Tokio is officially the Tokyo Metropolis area, it is the 
+capital and largest city of Japan. Its metropolitan area is the most populous 
+in the world, an estimated 37.4 million people residents there as of 2018. It is
+located at the head of Tokyo Bay, a must visit for the world traveller. 
+                </div>
+                <div class="img-div Tokyo">
+                    <div class="numtxt">1/5</div>
+                    <img src="https://wallpaperaccess.com/full/44207.jpg" alt="">
+                    <a class="prev" onclick="chgTokyo(-1)"><</a>
+                    <a class="next" onclick="chgTokyo(1)">></a>
+                </div>
+                <div class="img-div Tokyo">
+                    <div class="numtxt">2/5</div>
+                    <img src="https://wallpaperaccess.com/full/1265.jpg" alt="">
+                    <a class="prev" onclick="chgTokyo(-1)"><</a>
+                    <a class="next" onclick="chgTokyo(1)">></a>
+                </div>
+                <div class="img-div Tokyo">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/346328.jpg" alt="">
+                    <a class="prev" onclick="chgTokyo(-1)"><</a>
+                    <a class="next" onclick="chgTokyo(1)">></a>
+                </div>
+                <div class="img-div Tokyo">
+                    <div class="numtxt">4/5</div>
+                    <img src="https://wallpaperaccess.com/full/1194935.jpg" alt="">
+                    <a class="prev" onclick="chgTokyo(-1)"><</a>
+                    <a class="next" onclick="chgTokyo(1)">></a>
+                </div>
+                <div class="img-div Tokyo">
+                    <div class="numtxt">5/5</div>
+                    <iframe height="519.75" width="924" src="https://www.youtube.com/embed/OKAYqzOfLjY" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="prev" onclick="chgTokyo(-1)"><</a>
+                    <a class="next" onclick="chgTokyo(1)">></a>
+                </div>
+            </div>
+            <script>
+                let tokyoIdx = 0;
+                ShowTok(tokyoIdx);
+                function chgTokyo(n){
+                    ShowTok(tokyoIdx += n);
+                }
+                function ShowTok(n){
+                    let TokImgs = document.getElementsByClassName("Tokyo");
+                    if(n > TokImgs.length -1){
+                        tokyoIdx = 0;
+                    }
+                    if(n < 0){
+                        tokyoIdx = TokImgs.length - 1;
+                    }
+                    for(i = 0; i<TokImgs.length; i++){
+                        TokImgs[i].style.display = "none";
+                    }
+                    TokImgs[tokyoIdx].style.display = "block";
+                }
+            </script>
+
+            <!--quebec City-->
+            <div id="QuebecDiv" class="city-div">
+                <div class="city-header">
+                    <h3>Quebec</h3>
+                </div>
+                <div class ="city-txt">
+                    Quebec, French Quebec, eastern province of Canada. Constituting nearly one-sixth of Canada's total land area, Quebec is the largest of Canada's 10 provinces in area and is second only to Ontario in population. Its capital, Quebec city, is the oldest city in Canada. Quebec is well known for producing maple syrup, for its comedy, and for making hockey one of the most popular sports in Canada.</div>
+                <div class="img-div quebec">
+                    <div class="numtxt">1/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667069.jpg" alt="">
+                    <a class="prev" onclick="chgquebec(-1)"><</a>
+                    <a class="next" onclick="chgquebec(1)">></a>
+                </div>
+                <div class="img-div quebec">
+                    <div class="numtxt">2/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666983.jpg" alt="">
+                    <a class="prev" onclick="chgquebec(-1)"><</a>
+                    <a class="next" onclick="chgquebec(1)">></a>
+                </div>
+                <div class="img-div quebec">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667092.jpg" alt="">
+                    <a class="prev" onclick="chgquebec(-1)"><</a>
+                    <a class="next" onclick="chgquebec(1)">></a>
+                </div>
+                <div class="img-div quebec">
+                    <div class="numtxt">4/4</div>
+                    <img src="https://wallpaperaccess.com/full/792004.jpg" alt="">
+                    <a class="prev" onclick="chgquebec(-1)"><</a>
+                    <a class="next" onclick="chgquebec(1)">></a>
+                </div>
+            </div>
+            <script>
+                let quebecIdx = 0;
+                Showquebec(quebecIdx);
+                function chgquebec(n){
+                    Showquebec(quebecIdx += n);
+                }
+                function Showquebec(n){
+                    let quebecImgs = document.getElementsByClassName("quebec");
+                    if(n > quebecImgs.length -1){
+                        quebecIdx = 0;
+                    }
+                    if(n < 0){
+                        quebecIdx = quebecImgs.length - 1;
+                    }
+                    for(i = 0; i < quebecImgs.length; i++){
+                        quebecImgs[i].style.display = "none";
+                    }
+                    quebecImgs[quebecIdx].style.display = "block";
+                }
+            </script>
+
+            <!-- 3  Lucerne-->
+             <!--Lucerne City-->
+             <div id="LucerneDiv" class="city-div">
+                <div class="city-header">
+                    <h3>Lucerne</h3>
+                </div>
+                <div class ="city-txt">
+                    The city of Lucerne (Luzern in German) is a popular stop for most people visiting Switzerland. The city is well known for its stunning medieval architecture and its stunning location on the edge of Lake Lucerne amid snow capped mountains. Many people touring Switzerland spend at least a few days in Lucerne.</div>
+                <div class="img-div Lucerne">
+                    <div class="numtxt">1/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667472.jpg" alt="">                                      <!--  -->
+                    <a class="prev" onclick="chgLucerne(-1)"><</a>
+                    <a class="next" onclick="chgLucerne(1)">></a>
+                </div>
+                <div class="img-div Lucerne">
+                    <div class="numtxt">2/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667482.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgLucerne(-1)"><</a>
+                    <a class="next" onclick="chgLucerne(1)">></a>
+                </div>
+                <div class="img-div Lucerne">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667492.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgLucerne(-1)"><</a>
+                    <a class="next" onclick="chgLucerne(1)">></a>
+                </div>
+                <div class="img-div Lucerne">
+                    <div class="numtxt">4/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667503.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgLucerne(-1)"><</a>
+                    <a class="next" onclick="chgLucerne(1)">></a>
+                </div>
+            </div>
+            <script>
+                let LucerneIdx = 0;
+                ShowLucerne(LucerneIdx);
+                function chgLucerne(n){
+                    ShowLucerne(LucerneIdx += n);
+                }
+                function ShowLucerne(n){
+                    let LucerneImgs = document.getElementsByClassName("Lucerne");
+                    if(n > LucerneImgs.length -1){
+                        LucerneIdx = 0;
+                    }
+                    if(n < 0){
+                        LucerneIdx = LucerneImgs.length - 1;
+                    }
+                    for(i = 0; i < LucerneImgs.length; i++){
+                        LucerneImgs[i].style.display = "none";
+                    }
+                    LucerneImgs[LucerneIdx].style.display = "block";
+                }
+            </script>
+            <!-- 3-->
+<!----------------------------------------------------------------------->
+            <!-- 4  Tallinn-->
+             <!--Tallinn City-->
+             <div id="TallinnDiv" class="city-div">
+                <div class="city-header">
+                    <h3>Tallinn</h3>
+                </div>
+                <div class ="city-txt">
+                    Tallinn is the capital and largest city of Estonia with a population around over 450,000. It is situated on the northern coast of the country, on the shore of the Gulf of Finland. Tallinn is well known for its wonderfully preserved medieval architecture; more obscure is the Struve Geodetic Arc, which Estonia shares with Belarus, Finland, Latvia, Lithuania, Norway, Moldova, Russia, Sweden and Ukraine.
+                </div>
+                <div class="img-div Tallinn">
+                    <div class="numtxt">1/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667341.jpg" alt="">                                      <!--  -->
+                    <a class="prev" onclick="chgTallinn(-1)"><</a>
+                    <a class="next" onclick="chgTallinn(1)">></a>
+                </div>
+                <div class="img-div Tallinn">
+                    <div class="numtxt">2/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667343.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgTallinn(-1)"><</a>
+                    <a class="next" onclick="chgTallinn(1)">></a>
+                </div>
+                <div class="img-div Tallinn">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/1619648.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgTallinn(-1)"><</a>
+                    <a class="next" onclick="chgTallinn(1)">></a>
+                </div>
+                <div class="img-div Tallinn">
+                    <div class="numtxt">4/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667351.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgTallinn(-1)"><</a>
+                    <a class="next" onclick="chgTallinn(1)">></a>
+                </div>
+            </div>
+            <script>
+                let TallinnIdx = 0;
+                ShowTallinn(TallinnIdx);
+                function chgTallinn(n){
+                    ShowTallinn(TallinnIdx += n);
+                }
+                function ShowTallinn(n){
+                    let TallinnImgs = document.getElementsByClassName("Tallinn");
+                    if(n > TallinnImgs.length -1){
+                        TallinnIdx = 0;
+                    }
+                    if(n < 0){
+                        TallinnIdx = TallinnImgs.length - 1;
+                    }
+                    for(i = 0; i < TallinnImgs.length; i++){
+                        TallinnImgs[i].style.display = "none";
+                    }
+                    TallinnImgs[TallinnIdx].style.display = "block";
+                }
+            </script>
+            <!-- 4-->
+<!----------------------------------------------------------------------->
+            <!-- 5  queenstown-->
+             <!--queenstown City-->
+             <div id="queenstownDiv" class="city-div">
+                <div class="city-header">
+                    <h3>Queenstown</h3>
+                </div>
+                <div class ="city-txt">
+                    Queenstown is one of New Zealand's most exciting destinations. Surrounded by towering mountains, positioned on the edge of a lake. World-renowned for its adventure, Queenstown is home to a huge choice of adrenaline activities including jet boating, bungy jumping, white water rafting, skydiving and even indoor thrills.
+                </div>
+                <div class="img-div queenstown">
+                    <div class="numtxt">1/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667212.jpg" alt="">                                      <!--  -->
+                    <a class="prev" onclick="chgqueenstown(-1)"><</a>
+                    <a class="next" onclick="chgqueenstown(1)">></a>
+                </div>
+                <div class="img-div queenstown">
+                    <div class="numtxt">2/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667236.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgqueenstown(-1)"><</a>
+                    <a class="next" onclick="chgqueenstown(1)">></a>
+                </div>
+                <div class="img-div queenstown">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667259.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgqueenstown(-1)"><</a>
+                    <a class="next" onclick="chgqueenstown(1)">></a>
+                </div>
+                <div class="img-div queenstown">
+                    <div class="numtxt">4/4</div>
+                    <img src="https://wallpaperaccess.com/full/1667236.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgqueenstown(-1)"><</a>
+                    <a class="next" onclick="chgqueenstown(1)">></a>
+                </div>
+            </div>
+            <script>
+                let queenstownIdx = 0;
+                Showqueenstown(queenstownIdx);
+                function chgqueenstown(n){
+                    Showqueenstown(queenstownIdx += n);
+                }
+                function Showqueenstown(n){
+                    let queenstownImgs = document.getElementsByClassName("queenstown");
+                    if(n > queenstownImgs.length -1){
+                        queenstownIdx = 0;
+                    }
+                    if(n < 0){
+                        queenstownIdx = queenstownImgs.length - 1;
+                    }
+                    for(i = 0; i < queenstownImgs.length; i++){
+                        queenstownImgs[i].style.display = "none";
+                    }
+                    queenstownImgs[queenstownIdx].style.display = "block";
+                }
+            </script>
+            <!-- 5  cartagena-->
+<!----------------------------------------------------------------------->
+            <!-- 6  cartagena-->
+             <!--cartagena City-->
+             <div id="cartagenaDiv" class="city-div">
+                <div class="city-header">
+                    <h3>Cartagena</h3>
+                </div>
+                <div class ="city-txt">
+                    Cartagena is a port city on Colombiaâ€™s Caribbean coast. By the sea is the walled Old Town, founded in the 16th century, with squares, cobblestone streets and colorful colonial buildings. With a tropical climate, the city is also a popular beach destination. Reachable by boat are Isla de BarÃº, with white-sand beaches and palm trees, and the Islas del Rosario, known for their coral reefs.                </div>
+                <div class="img-div cartagena">
+                    <div class="numtxt">1/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666714.jpg" alt="">                                      <!--  -->
+                    <a class="prev" onclick="chgcartagena(-1)"><</a>
+                    <a class="next" onclick="chgcartagena(1)">></a>
+                </div>
+                <div class="img-div cartagena">
+                    <div class="numtxt">2/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666750.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgcartagena(-1)"><</a>
+                    <a class="next" onclick="chgcartagena(1)">></a>
+                </div>
+                <div class="img-div cartagena">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666711.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgcartagena(-1)"><</a>
+                    <a class="next" onclick="chgcartagena(1)">></a>
+                </div>
+                <div class="img-div cartagena">
+                    <div class="numtxt">4/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666758.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgcartagena(-1)"><</a>
+                    <a class="next" onclick="chgcartagena(1)">></a>
+                </div>
+            </div>
+            <script>
+                let cartagenaIdx = 0;
+                Showcartagena(cartagenaIdx);
+                function chgcartagena(n){
+                    Showcartagena(cartagenaIdx += n);
+                }
+                function Showcartagena(n){
+                    let cartagenaImgs = document.getElementsByClassName("cartagena");
+                    if(n > cartagenaImgs.length -1){
+                        cartagenaIdx = 0;
+                    }
+                    if(n < 0){
+                        cartagenaIdx = cartagenaImgs.length - 1;
+                    }
+                    for(i = 0; i < cartagenaImgs.length; i++){
+                        cartagenaImgs[i].style.display = "none";
+                    }
+                    cartagenaImgs[cartagenaIdx].style.display = "block";
+                }
+            </script>
+            <!-- 6-->
+<!----------------------------------------------------------------------->
+            <!-- 7  krakow-->
+             <!--krakow City-->
+             <div id="krakowDiv" class="city-div">
+                <div class="city-header">
+                    <h3>KrakÃ³w</h3>
+                </div>
+                <div class ="city-txt">
+                    Krakow, a southern Poland city near the border of the Czech Republic, is known for its well-preserved medieval core and Jewish quarter. Its old town ringed by Planty Park and remnants of the city's medieval walls is centered on the stately, expansive Rynek GlÃ³wny. This plaza is the site of the Cloth Hall, a Renaissance-era trading outpost, and St. Maryâ€™s Basilica, a 14th-century Gothic church.</div>
+                <div class="img-div krakow">
+                    <div class="numtxt">1/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666640.jpg" alt="">                                      <!--  -->
+                    <a class="prev" onclick="chgkrakow(-1)"><</a>
+                    <a class="next" onclick="chgkrakow(1)">></a>
+                </div>
+                <div class="img-div krakow">
+                    <div class="numtxt">2/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666679.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgkrakow(-1)"><</a>
+                    <a class="next" onclick="chgkrakow(1)">></a>
+                </div>
+                <div class="img-div krakow">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666685.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgkrakow(-1)"><</a>
+                    <a class="next" onclick="chgkrakow(1)">></a>
+                </div>
+                <div class="img-div krakow">
+                    <div class="numtxt">4/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666733.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgkrakow(-1)"><</a>
+                    <a class="next" onclick="chgkrakow(1)">></a>
+                </div>
+            </div>
+            <script>
+                let krakowIdx = 0;
+                Showkrakow(krakowIdx);
+                function chgkrakow(n){
+                    Showkrakow(krakowIdx += n);
+                }
+                function Showkrakow(n){
+                    let krakowImgs = document.getElementsByClassName("krakow");
+                    if(n > krakowImgs.length -1){
+                        krakowIdx = 0;
+                    }
+                    if(n < 0){
+                        krakowIdx = krakowImgs.length - 1;
+                    }
+                    for(i = 0; i < krakowImgs.length; i++){
+                        krakowImgs[i].style.display = "none";
+                    }
+                    krakowImgs[krakowIdx].style.display = "block";
+                }
+            </script>
+            <!-- 7-->
+<!----------------------------------------------------------------------->
+            <!-- 8  bruges-->
+             <!--bruges City-->
+             <div id="brugesDiv" class="city-div">
+                <div class="city-header">
+                    <h3>Bruges</h3>
+                </div>
+                <div class ="city-txt">
+                    Bruges, the capital of West Flanders in northwest Belgium, is distinguished by its canals, cobbled streets and medieval buildings. Its port, Zeebrugge, is an important center for fishing and European trade. In the city centerâ€™s Burg square, the 14th-century Stadhuis has an ornate carved ceiling. Nearby, Markt square features a 13th-century belfry with a 47-bell carillon and 83m tower with panoramic views.                </div>
+                <div class="img-div bruges">
+                    <div class="numtxt">1/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666639.jpg" alt="">                                      <!--  -->
+                    <a class="prev" onclick="chgbruges(-1)"><</a>
+                    <a class="next" onclick="chgbruges(1)">></a>
+                </div>
+                <div class="img-div bruges">
+                    <div class="numtxt">2/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666643.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgbruges(-1)"><</a>
+                    <a class="next" onclick="chgbruges(1)">></a>
+                </div>
+                <div class="img-div bruges">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666650.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgbruges(-1)"><</a>
+                    <a class="next" onclick="chgbruges(1)">></a>
+                </div>
+                <div class="img-div bruges">
+                    <div class="numtxt">4/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666661.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgbruges(-1)"><</a>
+                    <a class="next" onclick="chgbruges(1)">></a>
+                </div>
+            </div>
+            <script>
+                let brugesIdx = 0;
+                Showbruges(brugesIdx);
+                function chgbruges(n){
+                    Showbruges(brugesIdx += n);
+                }
+                function Showbruges(n){
+                    let brugesImgs = document.getElementsByClassName("bruges");
+                    if(n > brugesImgs.length -1){
+                        brugesIdx = 0;
+                    }
+                    if(n < 0){
+                        brugesIdx = brugesImgs.length - 1;
+                    }
+                    for(i = 0; i < brugesImgs.length; i++){
+                        brugesImgs[i].style.display = "none";
+                    }
+                    brugesImgs[brugesIdx].style.display = "block";
+                }
+            </script>
+            <!-- 8-->
+<!----------------------------------------------------------------------->
+            <!-- 9  tianjin-->
+             <!--tianjin City-->
+             <div id="tianjinDiv" class="city-div">
+                <div class="city-header">
+                    <h3>Tianjin</h3>
+                </div>
+                <div class ="city-txt">
+                    Tianjin or Jin in short, one of the four municipalities directly under the Central Government in China, is located in the northeast of the North China Plain and is the closest seaport to Beijing. The city is one of the biggest industrial and port cities in China and it is also known as 'the diamond of the Bohai Gulf'. The city is noted for its woven handicraft products, terra-cotta figurines, and extensive seafood cuisine.                </div>
+                <div class="img-div tianjin">
+                    <div class="numtxt">1/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666298.jpg" alt="">                                      <!--  -->
+                    <a class="prev" onclick="chgtianjin(-1)"><</a>
+                    <a class="next" onclick="chgtianjin(1)">></a>
+                </div>
+                <div class="img-div tianjin">
+                    <div class="numtxt">2/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666306.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgtianjin(-1)"><</a>
+                    <a class="next" onclick="chgtianjin(1)">></a>
+                </div>
+                <div class="img-div tianjin">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/1666326.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgtianjin(-1)"><</a>
+                    <a class="next" onclick="chgtianjin(1)">></a>
+                </div>
+                <div class="img-div tianjin">
+                    <div class="numtxt">4/4</div>
+                    <img src="https://wallpaperaccess.com/full/3217.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgtianjin(-1)"><</a>
+                    <a class="next" onclick="chgtianjin(1)">></a>
+                </div>
+            </div>
+            <script>
+                let tianjinIdx = 0;
+                Showtianjin(tianjinIdx);
+                function chgtianjin(n){
+                    Showtianjin(tianjinIdx += n);
+                }
+                function Showtianjin(n){
+                    let tianjinImgs = document.getElementsByClassName("tianjin");
+                    if(n > tianjinImgs.length -1){
+                        tianjinIdx = 0;
+                    }
+                    if(n < 0){
+                        tianjinIdx = tianjinImgs.length - 1;
+                    }
+                    for(i = 0; i < tianjinImgs.length; i++){
+                        tianjinImgs[i].style.display = "none";
+                    }
+                    tianjinImgs[tianjinIdx].style.display = "block";
+                }
+            </script>
+            <!-- 9-->
+<!----------------------------------------------------------------------->
+            <!-- 10  habana-->
+             <!--habana City-->
+             <div id="habanaDiv" class="city-div">
+                <div class="city-header">
+                    <h3>Havana</h3>
+                </div>
+                <div class ="city-txt">
+                    Havana is Cubaâ€™s capital city. Spanish colonial architecture in its 16th-century Old Havana core includes the Castillo de la Real Fuerza, a fort and maritime museum. The National Capitol Building is an iconic 1920s landmark. Also in Old Havana is the baroque Catedral de San CristÃ³bal and Plaza Vieja, whose buildings reflect the cityâ€™s vibrant architectural mix.                </div>
+                <div class="img-div habana">
+                    <div class="numtxt">1/4</div>
+                    <img src="https://wallpaperaccess.com/full/1665026.jpg" alt="">                                      <!--  -->
+                    <a class="prev" onclick="chghabana(-1)"><</a>
+                    <a class="next" onclick="chghabana(1)">></a>
+                </div>
+                <div class="img-div habana">
+                    <div class="numtxt">2/4</div>
+                    <img src="https://wallpaperaccess.com/full/1665031.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chghabana(-1)"><</a>
+                    <a class="next" onclick="chghabana(1)">></a>
+                </div>
+                <div class="img-div habana">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/1665041.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chghabana(-1)"><</a>
+                    <a class="next" onclick="chghabana(1)">></a>
+                </div>
+                <div class="img-div habana">
+                    <div class="numtxt">4/4</div>
+                    <img src="https://wallpaperaccess.com/full/1665042.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chghabana(-1)"><</a>
+                    <a class="next" onclick="chghabana(1)">></a>
+                </div>
+            </div>
+            <script>
+                let habanaIdx = 0;
+                Showhabana(habanaIdx);
+                function chghabana(n){
+                    Showhabana(habanaIdx += n);
+                }
+                function Showhabana(n){
+                    let habanaImgs = document.getElementsByClassName("habana");
+                    if(n > habanaImgs.length -1){
+                        habanaIdx = 0;
+                    }
+                    if(n < 0){
+                        habanaIdx = habanaImgs.length - 1;
+                    }
+                    for(i = 0; i < habanaImgs.length; i++){
+                        habanaImgs[i].style.display = "none";
+                    }
+                    habanaImgs[habanaIdx].style.display = "block";
+                }
+            </script>
+            <!-- 10-->
+<!----------------------------------------------------------------------->
+
+            <!-- 11  vancouver-->
+             <!--vancouver City-->
+             <div id="vancouverDiv" class="city-div">
+                <div class="city-header">
+                    <h3>Vancouver</h3>
+                </div>
+                <div class ="city-txt">
+                    Vancouver, a bustling west coast seaport in British Columbia, is among Canadaâ€™s densest, most ethnically diverse cities. A popular filming location, itâ€™s surrounded by mountains, and also has thriving art, theatre and music scenes. Vancouver Art Gallery is known for its works by regional artists, while the Museum of Anthropology houses preeminent First Nations collections                </div>
+                <div class="img-div vancouver">
+                    <div class="numtxt">1/4</div>
+                    <img src="https://wallpaperaccess.com/full/1593434.jpg" alt="">                                      <!--  -->
+                    <a class="prev" onclick="chgvancouver(-1)"><</a>
+                    <a class="next" onclick="chgvancouver(1)">></a>
+                </div>
+                <div class="img-div vancouver">
+                    <div class="numtxt">2/4</div>
+                    <img src="https://wallpaperaccess.com/full/1593435.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgvancouver(-1)"><</a>
+                    <a class="next" onclick="chgvancouver(1)">></a>
+                </div>
+                <div class="img-div vancouver">
+                    <div class="numtxt">3/4</div>
+                    <img src="https://wallpaperaccess.com/full/1593440.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgvancouver(-1)"><</a>
+                    <a class="next" onclick="chgvancouver(1)">></a>
+                </div>
+                <div class="img-div vancouver">
+                    <div class="numtxt">4/4</div>
+                    <img src="https://wallpaperaccess.com/full/1593444.jpg" alt="">                                     <!--  -->
+                    <a class="prev" onclick="chgvancouver(-1)"><</a>
+                    <a class="next" onclick="chgvancouver(1)">></a>
+                </div>
+            </div>
+            <script>
+                let vancouverIdx = 0;
+                Showvancouver(vancouverIdx);
+                function chgvancouver(n){
+                    Showvancouver(vancouverIdx += n);
+                }
+                function Showvancouver(n){
+                    let vancouverImgs = document.getElementsByClassName("vancouver");
+                    if(n > vancouverImgs.length -1){
+                        vancouverIdx = 0;
+                    }
+                    if(n < 0){
+                        vancouverIdx = vancouverImgs.length - 1;
+                    }
+                    for(i = 0; i < vancouverImgs.length; i++){
+                        vancouverImgs[i].style.display = "none";
+                    }
+                    vancouverImgs[vancouverIdx].style.display = "block";
+                }
+            </script>
+            <script>
+             console.log("inner height", window.innerHeight);
+             console.log(document.getElementsByTagName("HTML"));
+             document.body.style.height = (document.getElementsByTagName("HTML")[0].offsetHeight) + window.innerHeight + "px";
+            </script>
+            <!-- 11-->
+    </body>
+</html>
